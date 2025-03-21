@@ -1,10 +1,15 @@
+"use client";
+import { useScrollPosition } from '@/hooks/useScrollPosition'
 import { ModeToggle } from '@/components/mode-toggle'
 import {cn} from '@/lib/utils'
 import { BellRing, Search } from 'lucide-react'
 import { Logo } from '@/components/Shared/Logo'
-import { itemsNavbar } from '@/data/itemsNAvbar'
+import { itemsNavbar } from '@/data/itemsNavbar'
 import Link from 'next/link'
+
 export  function NavDesktop() {
+  const scrollPosition = useScrollPosition();
+  console.log(scrollPosition)
   return (
     <div
     className={cn(
