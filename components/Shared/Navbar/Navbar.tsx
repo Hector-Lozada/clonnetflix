@@ -1,7 +1,15 @@
-import React from 'react'
+import { NavDesktop } from "./NavDesktop";
+import { NavMobile } from "./NavMobile";
 
-export default function Navbar() {
+export  function Navbar() {
   return (
-    <div>Navbar</div>
+    <nav>
+        <div className="hidden mx-auto md:block">
+            <NavDesktop />
+        </div>
+        <div className="md:hidden">
+            <NavMobile />
+        </div>
+    </nav>
   )
 }

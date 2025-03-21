@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/mode-toggle";
-import Navbar from "@/components/Shared/Navbar/Navbar";
+import {Navbar} from "@/components/Shared/Navbar/Navbar";
 
 export default function Home() {
   return (
