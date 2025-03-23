@@ -16,7 +16,7 @@ export default function AuthLayout({
         <Logo/>
       </div>
       <div className="h-full w-full max-w-md mx-auto">
-        <div className="bg-black/70 px-14 py-16">{children}</div>
+        <div className="bg-black/70 px-14 py-14 rounded-3xl">{children}</div>
       </div>
       </div>
     </div>
