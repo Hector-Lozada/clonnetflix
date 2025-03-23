@@ -1,4 +1,5 @@
-import { ThemeProvider } from "@/components/theme-provider";
+import { Logo } from "@/components/Shared/Logo";
+
 
 export default function AuthLayout({
   children,
@@ -6,18 +7,18 @@ export default function AuthLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <h1>AuthLayout</h1>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-      </body>
-    </html>
+    <div className="h-full">
+      <div className="h-full relative">
+      <div className="bg-black h-full min-h-screen absolute w-full -z-10">
+        <div className="bg-[url('/back.jpg')] h-full opacity-40" />
+      </div>
+      <div className="px-8 py-5 max-w-7xl mx-auto">
+        <Logo/>
+      </div>
+      <div className="h-full w-full max-w-md mx-auto">
+        <div>{children}</div>
+      </div>
+      </div>
+    </div>
   );
 }

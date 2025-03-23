@@ -14,7 +14,7 @@ export  function NavDesktop() {
     <div
     className={cn(
       "z-30 left-0 right-0 top-0 h-16 fixed w-full transation-all duration-300",
-      //scrollPosition > 20 ? "bg-[#008000]" : "bg-transparent"
+      scrollPosition > 20 ? "bg-[#008000]" : "bg-transparent"
     )}
     >
       <div className='px-[4%] mx-auto h-full'>
@@ -26,17 +26,16 @@ export  function NavDesktop() {
                 <Link 
                 key={item.name} 
                 href={item.href}
-                className='hover:text-[#008000] dark:hover:text-[#008000] transition-all duration-300'>
+                className='text-white hover:text-[#008000] dark:hover:text-[#008000] transition-all duration-300'>
                   {item.name}
                 </Link>
               ))}
             </div>
           </div>
           <div className=' flex gap-4 items-center'>
-            <Search className='cursor-pointer' />
-            <BellRing className='cursor-pointer' />
+            <Search className='text-white cursor-pointer' />
+            <BellRing className='text-white cursor-pointer' />
             <div className='flex gap-2 items-center'>
-            <ModeToggle />
               <p>Usuario</p>
             </div>
           </div>
