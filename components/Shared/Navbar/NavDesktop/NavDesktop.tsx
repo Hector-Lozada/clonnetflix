@@ -13,7 +13,8 @@ export  function NavDesktop() {
   return (
     <div
     className={cn(
-      "z-30 left-0 right-0 top-0 h-16 fixed w-full transation-all duration-300"
+      "z-30 left-0 right-0 top-0 h-16 fixed w-full transation-all duration-300",
+      //scrollPosition > 20 ? "bg-[#008000]" : "bg-transparent"
     )}
     >
       <div className='px-[4%] mx-auto h-full'>
