@@ -15,7 +15,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { formSchema } from "./LoginForm.form";
 import { useState } from "react";
+import { login } from "@/actions/login";
 import { FormError } from "./FormError";
+import { toast } from "@/hooks/use-toast";
 
 
 export function LoginForm() {
@@ -29,7 +31,21 @@ export function LoginForm() {
         },
     });
     const onSubmit = (values: z.infer<typeof formSchema>) => {
-        console.log(values);
+        try{
+          login(values).then((data) => {
+              setError(data?.error);
+              if(data?.success){
+                toast({
+                  title: "Inicio de sesión exitoso",
+                  description: "Bienvenido a UTELVTFLIX",
+                });
+                  window.location.href = "/profiles";
+              }
+            })
+        }
+        catch(error){
+            console.log(error);
+        }
     };
     return (
         <Form {...form}>

@@ -14,7 +14,7 @@ export  function NavDesktop() {
     <div
     className={cn(
       "z-30 left-0 right-0 top-0 h-16 fixed w-full transation-all duration-300",
-      scrollPosition > 20 ? "bg-[#008000]" : "bg-transparent"
+      scrollPosition > 20 ? "bg-black/70" : "bg-transparent"
     )}
     >
       <div className='px-[4%] mx-auto h-full'>
@@ -26,7 +26,7 @@ export  function NavDesktop() {
                 <Link 
                 key={item.name} 
                 href={item.href}
-                className='text-white hover:text-[#008000] dark:hover:text-[#008000] transition-all duration-300'>
+                className='text-white hover:text-gray-400 transition-all duration-300'>
                   {item.name}
                 </Link>
               ))}
