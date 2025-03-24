@@ -18,9 +18,11 @@ import { useState } from "react";
 import { login } from "@/actions/login";
 import { FormError } from "./FormError";
 import { toast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 
 export function LoginForm() {
+  const router = useRouter();
     const [error, setError] = useState<string | undefined>("");
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -39,9 +41,9 @@ export function LoginForm() {
                   title: "Inicio de sesión exitoso",
                   description: "Bienvenido a UTELVTFLIX",
                 });
-                  window.location.href = "/profiles";
               }
             })
+            router.push("/profiles");
         }
         catch(error){
             console.log(error);
